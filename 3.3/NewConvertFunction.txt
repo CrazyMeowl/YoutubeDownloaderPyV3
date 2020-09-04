@@ -1,0 +1,15 @@
+def convertlink(link1):
+	if "?list" in link1:
+		s = link1.find("?list")
+		s = s + 6
+	elif "&list" in link1:
+		s = link1.find("&list")
+		s = s + 6
+	if "&index" in link1:
+		e = link1.find("&index")
+	elif "&t" in link1:
+		e = link1.find("&t")
+	else:
+		e = len(link1)
+	link2 = "https://www.youtube.com/playlist?list="+link1[s:e]
+	print(link2)
